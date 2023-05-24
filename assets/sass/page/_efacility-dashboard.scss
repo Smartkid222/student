@@ -1,0 +1,383 @@
+section.efacility-dashboard-container {
+    padding: 0;
+    background: $light-grayish-blue;
+
+    h2 {
+        all: unset;
+    }
+
+    header {
+        all: unset;
+        position: fixed;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        padding: 1% 5%;
+        border-bottom: 2px solid $dark-green;
+        background: white;
+        overflow: hidden;
+
+        a#logo-anchor {
+            img {
+                all: unset;
+                display: block;
+                float: left;
+                width: 4em;
+            }
+        }
+    }
+
+    div.parent-container {
+        padding: 5%;
+
+        h1 {
+            margin-bottom: 5%;
+            color: $dark-green;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+
+        button {
+            height: 2em;
+            border: 1px solid $very-dark-blue;
+            border-radius: 20px;
+            background: transparent;
+            font-size: 0.92em;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+        }
+
+        button:hover {
+            color: white;
+            background: $very-dark-blue;
+        }
+
+        div.flex {
+            div.column {
+                display: grid;
+                place-items: center;
+                height: 10em;
+                padding: 2.5% 1.25%;
+                margin: 0 2.5%;
+                border-radius: 10px;
+                box-shadow: 0 0 4px 0 #ccc;
+                background: white;
+                text-align: center;
+
+                i {
+                    color: $wine;
+                    font-size: 1.5em;
+                }
+
+                h3 {
+                    color: $very-dark-blue;
+                    font-size: 0.9em;
+                    font-weight: 500;
+                }
+
+                h2 {
+                    margin-top: 5%;
+                    color: $wine;
+                    font-size: 1.3em;
+                }
+            }
+
+            div.column:first-of-type {
+                margin-left: 0;
+            }
+
+            div.column:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    div#welcome {
+        padding-top: 10em;
+        h2 {
+            font-size: 1.5em;
+
+            span {
+                color: $wine;
+                font-size: 100%;
+                font-weight: 400;
+            }
+        }
+
+        h3 {
+            position: relative;
+            font-size: 1em;
+
+            span {
+                color: $very-dark-blue;
+                font-size: 100%;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            span:hover {
+                text-decoration: underline;
+                text-decoration-style: dashed;
+            }
+        }
+
+        span.tooltip {
+            left: 16%;
+            margin-top: 10px;
+        }
+
+
+        h3:hover ~ span.tooltip {
+            opacity: 1;
+            visibility: visible;
+            animation: slide-up 0.4s;
+            animation-duration: 1;
+        }
+    }
+
+
+    div#overview {
+        padding-top: 1.25%;
+
+        div.column {
+            flex: 20%;
+        }
+    }
+
+    div#actions {
+        div.flex {
+            div.column {
+                flex: 25%;
+                height: 15em;
+                overflow: hidden;
+
+                h3 {
+                    margin-top: 5%;
+                    font-size: 1.1em;
+                }
+
+                a {
+                    display: inline;
+                    width: 30%;
+                    margin-top: 5%;
+
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+
+    div#payment-history {
+        overflow-x: scroll;
+
+        input {
+            width: 20em;
+            height: 2.5em;
+            margin-bottom: 2.5%;
+            padding: 0 1.25%;
+            border: 1px solid $very-dark-blue;
+            border-radius: 50px;
+            color: $very-dark-blue;
+            font-weight: 500;
+        }
+
+        ::placeholder {
+            color: $very-dark-blue;
+            font-weight: 100;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            tr {
+
+                th {
+                    padding: 0.325% 2.5%;
+                    border-bottom: 3px solid $wine;
+                    border-collapse: collapse;
+                    font-size: 1.1em;
+                    font-weight: 500;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+
+                td {
+                    padding: 2.5% 0;
+                    border: 1px solid $very-dark-blue;
+                    border-collapse: collapse;
+                    text-align: center;
+
+                    button {
+                        width: 6em;
+                        font-size: 0.92em;
+                    }
+                }
+
+                td.pending {
+                    color: $wine;
+                }
+
+                td.paid {
+                    color: $dark-green;
+                }
+            }
+
+
+            tr.hidden {
+                display: none;
+            }
+        }
+    }
+
+
+    div#stats {
+        padding: 0;
+        padding-top: 5%;
+        margin: 5%;
+        border-top: 5px solid $dark-green;
+
+        div.column {
+            flex: 10%;
+
+            h3 {
+                margin-top: 5%;
+            }
+        }
+    }
+
+
+    div#calculator {
+        div.flex {
+            div.column {
+                // all: unset;
+                display: block;
+                flex: 50%;
+                width: unset;
+                height: unset;
+                margin: unset;
+                border: unset;
+                padding: unset;
+                margin: unset;
+                box-shadow: unset;
+                border-radius: unset;
+                background: none;
+                text-align: left;
+
+                h2 {
+                    display: block;
+                    margin: 0;
+                    margin-bottom: 10%;
+                }
+            }
+
+            div#o-level {
+                padding-right: 10%;
+                border-right: 3px solid $dark-green;
+
+                div.flex {
+                    margin: 2.5% 0;
+
+                    span {
+                        flex: 1%;
+                        padding-top: 10px;
+                    }
+
+                    input,
+                    select {
+                        display: block;
+                        height: 3em;
+                        padding: 0 1.25%;
+                        border: 1px solid $very-dark-blue;
+                        border-radius: 10px;
+                        background: transparent;
+                    }
+
+                    input {
+                        margin: 0 2.5%;
+                        flex: 70%;
+                    }
+
+                    select {
+                        flex: 20%;
+                        width: 5em;
+                        padding: 0 5px;
+                    }
+                }
+            }
+
+            div#putme-results {
+                padding-left: 10%;
+
+                div#putme {
+                    padding-bottom: 20%;
+                    border-bottom: 4px solid $dark-green;
+
+                    div#score-container {
+                        width: 70%;
+                        height: 3em;
+                        border: 1px solid $very-dark-blue;
+                        border-radius: 10px;
+                        overflow: hidden;
+
+                        input {
+                            all: unset;
+                            display: inline-block;
+                            flex: 80%;
+                            height: 100%;
+                            padding-left: 5%;
+                        }
+
+                        span {
+                            display: grid;
+                            place-items: center;
+                            flex: 10%;
+                            height: 100%;
+                            color: white;
+                            background-color: $very-dark-blue;
+                            font-size: 1.4em;
+                            font-weight: 600;
+                        }
+
+                    }
+
+                    span.tooltip {
+                        left: 76%;
+                        margin-top: 10px;
+                    }
+
+                    div:hover ~ span.tooltip {
+                        opacity: 1;
+                        visibility: visible;
+                        animation: slide-up 0.4s;
+                        animation-duration: 1;
+                    }
+
+                    input[type=checkbox] {
+                        width: 1em;
+                        height: 1em;
+                        margin-top: 10%;
+
+                    }
+
+                    label {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            div#results {
+                display: grid;
+                place-items: center;
+                height: 20em;
+
+                h2 {
+                    font-size: 6em;
+                }
+            }
+        }
+    }
+}

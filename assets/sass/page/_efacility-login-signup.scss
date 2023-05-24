@@ -1,0 +1,290 @@
+section.efacility-login-container,
+section.efacility-signup-container,
+section.efacility-resetpassword-container {
+    width: 100%;
+    height: 100vh;
+    padding: 5em 0 0;
+    transition: 2s;
+
+    div.left-column,
+    div.right-column {
+        flex: 50%;
+        height: 100%;
+        transition: color 1s ease-in-out, background 1s ease-in-out;
+    }
+
+    div.left-column {
+        display: grid;
+        place-items: center;
+        padding: 5%;
+        background: $dark-green;
+
+        h1 {
+            font-size: 4em;
+            font-weight: 600;
+            color: white;
+            transition: color 2s ease-in-out;
+
+        }
+    }
+
+    div.right-column {
+        padding: 10%;
+    }
+
+    form {
+
+        p#warning {
+            margin: -5% -0 5%;
+            color: red;
+            font-weight: 500;
+            text-transform: full-width;
+        }
+
+        label {
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+
+        label.required-field::after {
+            content: '*';
+            color: $wine;
+        }
+
+        input,
+        select {
+            width: 100%;
+            margin: 2.5% 0 10%;
+            height: 3em;
+            padding: 2.5%;
+            border: 1px solid $dark-green;
+            border-radius: 0px;
+            color: $wine;
+            outline-color: $dark-green;
+        }
+
+        input[type="text"] {
+            text-transform: capitalize;
+        }
+
+        input[type="password"] {
+            font-weight: 800;
+            letter-spacing: 0.3em;
+        }
+
+        ::placeholder {
+            font-weight: 300;
+            letter-spacing: initial;
+        }
+
+        button {
+            width: 10em;
+            height: 3em;
+            border: 0px;
+            border-radius: 0px;
+            color: white;
+            background: $dark-green;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+        }
+
+        button:hover {
+            background: none;
+            border: 1px solid $dark-green;
+            color: $wine;
+        }
+
+        a {
+            display: block;
+            margin: 5% 0;
+            font-size: 0.9em;
+            color: $wine;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a#temp-dash-link {
+            display: inline-block;
+            padding-left: 2.5%;
+        }
+    }
+}
+
+// Signup page
+section.efacility-signup-container {
+    div.right-column {
+        overflow-y: scroll;
+
+        p {
+            margin-top: 10%;
+            a {
+                display: inline;
+            }
+        }
+    }
+}
+
+
+// Reset Password Page
+section.efacility-resetpassword-container {
+    height: 100vh;
+    background: $light-grayish-blue;
+
+    div.container{
+        width: 60%;
+        height: 80vh;
+        padding: 2.5%;
+        margin: auto;
+        border-radius: 10px;
+        background: $dark-green;
+
+        h1 {
+            color: white;
+            font-size: 3em;
+        }
+
+        h2 {
+            all: unset;
+            display: block;
+            color: $light-grayish-blue;
+            font-size: 1.2em;
+        }
+
+        form {
+            margin-top: 2.5%;
+            padding-top: 5%;
+            border-top: 1px solid white;
+
+
+            label {
+                display: block;
+                color: white;
+            }
+
+            input {
+                width: 60%;
+                margin: 2.5% 0;
+                border-color: black;
+            }
+
+            button {
+                background: black;
+            }
+
+            button:hover {
+                border-color: black;
+                color: white;
+                background: transparent;
+            }
+
+
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+
+// Responsiveness
+@media (max-width: 800px) {
+    section.efacility-login-container,
+    section.efacility-signup-container {
+        height: 100%;
+
+        div.left-column {
+            background: none;
+            height: 80vh;
+
+            h1 {
+                color: $dark-green;
+            }
+        }
+
+        div.right-column {
+            padding: 10% 5%;
+            color: white;
+            background-color: $dark-green;
+            border: none;
+            overflow: hidden;
+        }
+
+        form {
+            p#warning {
+                color: $bright-yellow;
+            }
+
+            label.required-field::after {
+                color: $bright-yellow;
+            }
+
+            input {
+                border: 1px solid black;
+            }
+
+            ::placeholder {
+                font-size: 0.85em;
+            }
+
+            button {
+                background: white;
+                color: $dark-green;
+            }
+
+            button:hover {
+                background: $wine;
+                color: white;
+            }
+
+            a {
+                color: white;
+                opacity: 0.8;
+            }
+
+            a:hover {
+                opacity: 1;
+            }
+
+            a#temp-dash-link {
+                display: block;
+                padding: 0;
+            }
+
+        }
+    }
+
+
+    section.efacility-resetpassword-container {
+        padding-top: 10%;
+
+        div.container {
+            width: 90%;
+            padding: 5%;
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            form {
+                width: 100%;
+                padding: 0;
+                padding-top: 10%;
+
+                input {
+                    width: 100%;
+                }
+
+                button {
+                    margin-top: 5%;
+                    margin-bottom: 10%;
+                }
+            }
+        }
+    }
+}

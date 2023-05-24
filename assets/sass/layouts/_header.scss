@@ -1,0 +1,175 @@
+header {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    color: $dark-green;
+    background: white;
+    border-bottom: 3px solid $dark-green;
+
+    // SIDEBAR STYLING BEGINS
+    nav {
+        position: fixed;
+        z-index: 10;
+        right: 0;
+        width: 0;
+        height: 100%;
+        padding: 0;
+        color: white;
+        background: $dark-green;
+        transition: 0.4s ease-in-out;
+
+        div#main-links,
+        div.more-links {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 5%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            transition: 0.4s ease-in-out;
+
+            a {
+                display: block;
+                margin: 2.5vh 0;
+                font-size: 1.3em;
+                transition: .3s ease-in-out;
+                cursor: pointer;
+
+                i {
+                    color: $bright-yellow;
+                }
+            }
+
+            a:hover {
+                color: $bright-yellow;
+            }
+        }
+
+        div#main-links.active {
+            width: 0;
+            height: 0;
+            padding: 0;
+        }
+
+
+        div.more-links {
+            width: 0;
+            height: 80vh;
+            padding: 0;
+
+            a.go-back {
+                position: absolute;
+                left: 5%;
+                top: 5%;
+                color: $bright-yellow;
+                width: 2em;
+
+                i {
+                    font-size: 1.3em;
+                }
+            }
+        }
+
+        div.more-links.active {
+            width: 100%;
+            padding: 10% 5%;
+        }
+    }
+
+    nav.active {
+        width: 100%;
+    }
+
+    // SIDEBAR STYLING ENDS
+
+    // Logo
+    img {
+        width: 50em;
+        height: 5em;
+        padding: 1% 5%;
+    }
+
+    // Hamburger Icon Styling Begins
+    // This is copied code
+    // Inshallah and Vibes
+    // Edit: I did some major restructuring too!
+        span#hamburger-menu-container {
+            position: fixed;
+            z-index: 10;
+            display: grid;
+            place-items: center;
+            top: 4%;
+            right: 2.5%;
+            width: 5%;
+            height: 3em;
+            cursor: pointer;
+
+            span {
+                display: block;
+                background: $dark-green;
+                border-radius:50px;
+                height: 3px;
+                margin: 1% 0;
+                transition: 0.4s ease-in-out;
+            }
+
+            span:nth-of-type(1){
+              width:50%;
+              margin-left: 8%;
+            }
+
+            span:nth-of-type(2){
+              width:100%;
+            }
+
+            span:nth-of-type(3){
+              width:50%;
+              margin-left: 8%;
+
+            }
+
+            .active {
+                background: $bright-yellow;
+            }
+
+            span:nth-of-type(2).active {
+                width: 50%;
+                margin-left: -20%;
+            }
+        }
+    // Hamburger Icon Styling Ends
+}
+
+// toggles it with the sidebar
+body.active {
+    overflow-y: hidden;
+}
+
+@media (max-width: 800px) {
+    header {
+        nav {
+            div#main-links,
+            div.more-links {
+                padding-top: 5em;
+                a {
+                    font-size: 1em;
+                }
+            }
+
+            div.more-links.active {
+                padding-top: 5em;
+            }
+        }
+        img {
+            width: 6em;
+            height: auto;
+            padding: 5%;
+        }
+
+        span#hamburger-menu-container {
+            width: 10%;
+        }
+    }
+}

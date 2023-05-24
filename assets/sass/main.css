@@ -1,0 +1,1780 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  object-fit: cover;
+}
+
+.flex {
+  display: flex;
+  flex-flow: wrap;
+}
+
+::selection {
+  background: #ffcc00;
+  color: blue;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .flex {
+    display: block;
+  }
+
+  .show-on-mobile {
+    display: block;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+}
+@media (min-width: 1441px) {
+  * {
+    font-size: 40px;
+  }
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+section {
+  padding: 5%;
+  padding-top: 10em;
+  overflow: hidden;
+}
+section h2 {
+  font-size: 1.8em;
+  font-weight: 400;
+  color: skyblue;
+  text-decoration: overline;
+  text-decoration-color: gray;
+}
+section span.tooltip {
+  position: absolute;
+  z-index: 1;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  background: #011627;
+  font-size: 0.8em;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s;
+}
+section span.tooltip::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  transform: rotate(-180deg);
+}
+@keyframes slide-up {
+  from {
+    margin-top: 20px;
+  }
+  to {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    padding-top: 5em;
+  }
+}
+footer {
+  padding: 5%;
+  background: gray;
+}
+footer div.top-container div.column {
+  flex: 20%;
+  padding: 0 1.25%;
+}
+footer div.top-container div.column a {
+  display: block;
+  padding: 5% 0;
+  font-weight: 500;
+  transition: 0.4s ease-in-out;
+}
+footer div.top-container div.column a:hover {
+  color: #ffcc00;
+}
+footer div.top-container div.column:nth-of-type(1) {
+  margin-left: 0;
+}
+footer div.top-container div.column:nth-of-type(1) h3 {
+  font-weight: 600;
+  margin-top: 5%;
+}
+footer div.top-container div.column:nth-of-type(1) a {
+  color: white;
+}
+footer div.top-container div.column:nth-of-type(1) a:hover {
+  text-decoration: underline;
+}
+footer div.top-container div.column:last-of-type h2 {
+  font-weight: 700;
+  padding: 5% 0;
+}
+footer div.top-container div.column:last-of-type form input {
+  width: 100%;
+  padding: 2.5%;
+  border: 1px solid black;
+  border-radius: 0;
+}
+footer div.bottom-container {
+  margin-top: 5%;
+  padding-top: 5%;
+  border-top: 5px solid black;
+}
+footer div.bottom-container div.column {
+  flex: 33.33%;
+}
+footer div.bottom-container div.column:first-of-type a {
+  display: inline-grid;
+  place-items: center;
+  width: 3em;
+  height: 3em;
+  margin-top: -5%;
+  background: silver;
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+}
+footer div.bottom-container div.column:first-of-type a i {
+  font-size: 1.3em;
+  transition: 0.4s ease-in-out;
+}
+footer div.bottom-container div.column:first-of-type a:hover i {
+  color: #ffcc00;
+}
+footer div.bottom-container div:nth-of-type(2) {
+  text-align: center;
+}
+footer div.bottom-container div:last-of-type {
+  text-align: right;
+}
+footer div.bottom-container div:last-of-type p a {
+  color: white;
+  font-weight: 500;
+}
+footer div.bottom-container div:last-of-type p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  footer div.top-container div:first-of-type {
+    margin-bottom: 5%;
+    padding: 0;
+  }
+  footer div.bottom-container div.column {
+    margin: 5% 0;
+    text-align: center;
+  }
+  footer div.bottom-container div.column a {
+    margin-top: 0 !important;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  color: gray;
+  background: white;
+  border-bottom: 3px solid gray;
+}
+header nav {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  width: 0;
+  height: 100%;
+  padding: 0;
+  color: white;
+  background: gray;
+  transition: 0.4s ease-in-out;
+}
+header nav div#main-links,
+header nav div.more-links {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+}
+header nav div#main-links a,
+header nav div.more-links a {
+  display: block;
+  margin: 2.5vh 0;
+  font-size: 1.3em;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+header nav div#main-links a i,
+header nav div.more-links a i {
+  color: #ffcc00;
+}
+header nav div#main-links a:hover,
+header nav div.more-links a:hover {
+  color: #ffcc00;
+}
+header nav div#main-links.active {
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+header nav div.more-links {
+  width: 0;
+  height: 80vh;
+  padding: 0;
+}
+header nav div.more-links a.go-back {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  color: #ffcc00;
+  width: 2em;
+}
+header nav div.more-links a.go-back i {
+  font-size: 1.3em;
+}
+header nav div.more-links.active {
+  width: 100%;
+  padding: 10% 5%;
+}
+header nav.active {
+  width: 100%;
+}
+header img {
+  width: 50em;
+  height: 5em;
+  padding: 1% 5%;
+}
+header span#hamburger-menu-container {
+  position: fixed;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  top: 4%;
+  right: 2.5%;
+  width: 5%;
+  height: 3em;
+  cursor: pointer;
+}
+header span#hamburger-menu-container span {
+  display: block;
+  background: gray;
+  border-radius: 50px;
+  height: 3px;
+  margin: 1% 0;
+  transition: 0.4s ease-in-out;
+}
+header span#hamburger-menu-container span:nth-of-type(1) {
+  width: 50%;
+  margin-left: 8%;
+}
+header span#hamburger-menu-container span:nth-of-type(2) {
+  width: 100%;
+}
+header span#hamburger-menu-container span:nth-of-type(3) {
+  width: 50%;
+  margin-left: 8%;
+}
+header span#hamburger-menu-container .active {
+  background: #ffcc00;
+}
+header span#hamburger-menu-container span:nth-of-type(2).active {
+  width: 50%;
+  margin-left: -20%;
+}
+
+body.active {
+  overflow-y: hidden;
+}
+
+@media (max-width: 800px) {
+  header nav div#main-links,
+header nav div.more-links {
+    padding-top: 5em;
+  }
+  header nav div#main-links a,
+header nav div.more-links a {
+    font-size: 1em;
+  }
+  header nav div.more-links.active {
+    padding-top: 5em;
+  }
+  header img {
+    width: 6em;
+    height: auto;
+    padding: 5%;
+  }
+  header span#hamburger-menu-container {
+    width: 10%;
+  }
+}
+/*Styling the Preloader*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  overflow: hidden;
+  background: #fff;
+}
+#preloader button {
+  position: absolute;
+  top: 2em;
+  right: 5%;
+  width: 15em;
+  height: 3.5em;
+  border: 1px solid skyblue;
+  border-radius: 5px;
+  color: skyblue;
+  outline-color: skyblue;
+  background: transparent;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+#preloader button:hover {
+  color: white;
+  background: gray;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid gray;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+#preloader.hidden {
+  display: none;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+section.index-hero {
+  padding-top: 10em;
+  color: white;
+  background-color: skyblue;
+  background-image: url(../../assets/img/download.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+}
+section.index-hero h1 {
+  margin-right: 40%;
+  font-size: 3.8em;
+  font-weight: 600;
+}
+section.index-hero p {
+  margin: 2% 40% 2% 0;
+  font-size: 1.2em;
+}
+section.index-hero a {
+  display: inline-block;
+  width: 15em;
+}
+section.index-hero a button {
+  width: 100%;
+  height: 3.5em;
+  border: none;
+  background: white;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+section.index-hero a button:hover {
+  color: white;
+  background: skyblue;
+  border-bottom: 1px solid white;
+}
+section.index-hero a:last-of-type {
+  margin-left: 2.5%;
+}
+
+section.mission-vision div {
+  flex: 50%;
+}
+section.mission-vision div p {
+  margin: 5% 0;
+}
+section.mission-vision div#left-column {
+  padding-right: 5%;
+  border-right: 1px solid black;
+}
+section.mission-vision div#right-column {
+  padding-left: 5%;
+}
+
+section.core-values {
+  padding: 5% calc(5% - 1.25%) 0;
+}
+section.core-values h2 {
+  width: 25%;
+  margin: 0 calc((100% - 25%) / 2);
+  text-align: center;
+}
+section.core-values div.container {
+  margin: 5% 0;
+  text-align: center;
+}
+section.core-values div.container div.card {
+  display: grid;
+  place-items: center;
+  flex: 20%;
+  height: 10em;
+  margin: 1.25%;
+  padding: 0 2.5%;
+  border: 2px solid #011627;
+  border-radius: 10px;
+  color: gray;
+  font-weight: 400;
+  transition: 0.4s ease-in-out;
+}
+
+section.news {
+  background: #cccc99;
+}
+section.news div.flex {
+  margin: 5% -1.25% 0;
+}
+section.news div.flex div.card {
+  flex: 25%;
+  padding: 2.5%;
+  margin: 0 1.25%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: white;
+  transition: 0.5s ease-in-out;
+}
+section.news div.flex div.card span.close-btn {
+  display: none;
+}
+section.news div.flex div.card h3 {
+  color: gray;
+  font-size: 1.3em;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section.news div.flex div.card p {
+  display: -webkit-box;
+  margin: 5% 0;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section.news div.flex div.card span.read-more-btn {
+  color: gray;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+section.news div.flex div.card span.read-more-btn:hover {
+  text-decoration: underline;
+}
+section.news div.flex div.card h4 {
+  margin-top: 5%;
+  font-size: 0.8em;
+  color: gray;
+}
+section.news div.flex div.card h4 span {
+  font-size: inherit;
+  font-weight: 500;
+}
+section.news div.flex div.opened-news-card {
+  position: absolute;
+  width: 95%;
+  margin-left: -1.25%;
+  z-index: 2;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+section.news div.flex div.opened-news-card span.close-btn {
+  display: block;
+  font-size: 2em;
+  float: right;
+  color: gray;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+section.news div.flex div.opened-news-card span.close-btn:hover {
+  font-size: 3em;
+}
+section.news div.flex div.opened-news-card h3 {
+  margin-top: 10%;
+  font-size: 2em;
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow: unset;
+  text-overflow: unset;
+}
+section.news div.flex div.opened-news-card p {
+  font-size: 1.4em;
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow: unset;
+  text-overflow: unset;
+}
+section.news div.flex div.opened-news-card span.read-more-btn {
+  display: none;
+}
+section.news div.flex div.opened-news-card h4 {
+  font-size: 1.3em;
+}
+section.news p#view-all {
+  margin-top: 5%;
+  font-size: 1.2em;
+  text-align: right;
+}
+section.news a {
+  color: gray;
+  transition: 0.4s ease-in-out;
+}
+section.news a:hover {
+  color: skyblue;
+}
+
+section.explore div.flex {
+  margin: 5% -2.5%;
+}
+section.explore div.flex div.card-container {
+  flex: 20%;
+  margin: 0 2.5%;
+  height: 10em;
+}
+section.explore div.flex div.card-container div.inner-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+section.explore div.flex div.card-container div.inner-container div.flip-card-front,
+section.explore div.flex div.card-container div.inner-container div.flip-card-back {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+section.explore div.flex div.card-container div.inner-container div.flip-card-front {
+  background: gray;
+}
+section.explore div.flex div.card-container div.inner-container div.flip-card-front h3 {
+  color: white;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+section.explore div.flex div.card-container div.inner-container div.flip-card-back {
+  transform: rotateY(-180deg);
+  color: white;
+  background: silver;
+}
+section.explore div.flex div.card-container div.inner-container div.flip-card-back a {
+  display: block;
+  font-size: 0.9em;
+  transition: 0.4s ease-in-out;
+  color: #e8e9eb;
+}
+section.explore div.flex div.card-container div.inner-container div.flip-card-back a:hover {
+  color: #ffcc00;
+  opacity: 1;
+}
+section.explore div.flex div.card-container:hover div.inner-container {
+  transform: rotateY(-180deg);
+}
+
+@media (max-width: 800px) {
+  section.index-hero h1 {
+    margin-right: 0;
+    font-size: 2.4em;
+  }
+  section.index-hero p {
+    margin-right: 0;
+    margin-bottom: 10%;
+  }
+  section.index-hero a {
+    width: 100%;
+  }
+  section.index-hero a:last-of-type {
+    margin: 5% 0 5% 0;
+  }
+
+  section.mission-vision {
+    padding-top: 0;
+  }
+  section.mission-vision div.column {
+    margin: 5em 0;
+  }
+  section.mission-vision div.column h2 {
+    margin: 0;
+    text-align: left;
+  }
+  section.mission-vision div#left-column {
+    border: 0;
+    padding: 0;
+  }
+  section.mission-vision div#right-column {
+    border: 0;
+    padding: 0;
+  }
+
+  section.core-values {
+    padding-bottom: 2.5em;
+  }
+  section.core-values h2 {
+    width: 100%;
+    margin: 0;
+  }
+  section.core-values div.container {
+    margin-top: 10%;
+  }
+  section.core-values div.container div.card {
+    margin: 5% 0;
+  }
+
+  section.news h2 {
+    margin: 0;
+    text-align: left;
+  }
+  section.news div.flex div.card {
+    margin: 5% 0;
+    padding: 5%;
+  }
+  section.news div.flex div.opened-news-card h3 {
+    font-size: 1.5em;
+  }
+  section.news div.flex div.opened-news-card p {
+    font-size: 1.1em;
+  }
+  section.news div.flex div.opened-news-card h4 {
+    font-size: 0.9em;
+  }
+
+  section.explore div.flex div.card-container {
+    margin-top: 5%;
+  }
+}
+section.efacility-login-container,
+section.efacility-signup-container,
+section.efacility-resetpassword-container {
+  width: 100%;
+  height: 100vh;
+  padding: 5em 0 0;
+  transition: 2s;
+}
+section.efacility-login-container div.left-column,
+section.efacility-login-container div.right-column,
+section.efacility-signup-container div.left-column,
+section.efacility-signup-container div.right-column,
+section.efacility-resetpassword-container div.left-column,
+section.efacility-resetpassword-container div.right-column {
+  flex: 50%;
+  height: 100%;
+  transition: color 1s ease-in-out, background 1s ease-in-out;
+}
+section.efacility-login-container div.left-column,
+section.efacility-signup-container div.left-column,
+section.efacility-resetpassword-container div.left-column {
+  display: grid;
+  place-items: center;
+  padding: 5%;
+  background: skyblue;
+}
+section.efacility-login-container div.left-column h1,
+section.efacility-signup-container div.left-column h1,
+section.efacility-resetpassword-container div.left-column h1 {
+  font-size: 4em;
+  font-weight: 600;
+  color: white;
+  transition: color 2s ease-in-out;
+}
+section.efacility-login-container div.right-column,
+section.efacility-signup-container div.right-column,
+section.efacility-resetpassword-container div.right-column {
+  padding: 10%;
+}
+section.efacility-login-container form p#warning,
+section.efacility-signup-container form p#warning,
+section.efacility-resetpassword-container form p#warning {
+  margin: -5% 0 5%;
+  color: red;
+  font-weight: 500;
+  text-transform: full-width;
+}
+section.efacility-login-container form label,
+section.efacility-signup-container form label,
+section.efacility-resetpassword-container form label {
+  font-size: 1.3em;
+  cursor: pointer;
+}
+section.efacility-login-container form label.required-field::after,
+section.efacility-signup-container form label.required-field::after,
+section.efacility-resetpassword-container form label.required-field::after {
+  content: "*";
+  color: #990033;
+}
+section.efacility-login-container form input,
+section.efacility-login-container form select,
+section.efacility-signup-container form input,
+section.efacility-signup-container form select,
+section.efacility-resetpassword-container form input,
+section.efacility-resetpassword-container form select {
+  width: 100%;
+  margin: 2.5% 0 10%;
+  height: 3em;
+  padding: 2.5%;
+  border: 1px solid gray;
+  border-radius: 0px;
+  color: #990033;
+  outline-color: gray;
+}
+section.efacility-login-container form input[type=text],
+section.efacility-signup-container form input[type=text],
+section.efacility-resetpassword-container form input[type=text] {
+  text-transform: capitalize;
+}
+section.efacility-login-container form input[type=password],
+section.efacility-signup-container form input[type=password],
+section.efacility-resetpassword-container form input[type=password] {
+  font-weight: 800;
+  letter-spacing: 0.3em;
+}
+section.efacility-login-container form ::placeholder,
+section.efacility-signup-container form ::placeholder,
+section.efacility-resetpassword-container form ::placeholder {
+  font-weight: 300;
+  letter-spacing: initial;
+}
+section.efacility-login-container form button,
+section.efacility-signup-container form button,
+section.efacility-resetpassword-container form button {
+  width: 10em;
+  height: 3em;
+  border: 0px;
+  border-radius: 0px;
+  color: white;
+  background: gray;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+section.efacility-login-container form button:hover,
+section.efacility-signup-container form button:hover,
+section.efacility-resetpassword-container form button:hover {
+  background: none;
+  border: 1px solid gray;
+  color: #990033;
+}
+section.efacility-login-container form a,
+section.efacility-signup-container form a,
+section.efacility-resetpassword-container form a {
+  display: block;
+  margin: 5% 0;
+  font-size: 0.9em;
+  color: #990033;
+}
+section.efacility-login-container form a:hover,
+section.efacility-signup-container form a:hover,
+section.efacility-resetpassword-container form a:hover {
+  text-decoration: underline;
+}
+section.efacility-login-container form a#temp-dash-link,
+section.efacility-signup-container form a#temp-dash-link,
+section.efacility-resetpassword-container form a#temp-dash-link {
+  display: inline-block;
+  padding-left: 2.5%;
+}
+
+section.efacility-signup-container div.right-column {
+  overflow-y: scroll;
+}
+section.efacility-signup-container div.right-column p {
+  margin-top: 10%;
+}
+section.efacility-signup-container div.right-column p a {
+  display: inline;
+}
+
+section.efacility-resetpassword-container {
+  height: 100vh;
+  background: #e8e9eb;
+}
+section.efacility-resetpassword-container div.container {
+  width: 60%;
+  height: 80vh;
+  padding: 2.5%;
+  margin: auto;
+  border-radius: 10px;
+  background: skyblue;
+}
+section.efacility-resetpassword-container div.container h1 {
+  color: white;
+  font-size: 3em;
+}
+section.efacility-resetpassword-container div.container h2 {
+  all: unset;
+  display: block;
+  color: #e8e9eb;
+  font-size: 1.2em;
+}
+section.efacility-resetpassword-container div.container form {
+  margin-top: 2.5%;
+  padding-top: 5%;
+  border-top: 1px solid white;
+}
+section.efacility-resetpassword-container div.container form label {
+  display: block;
+  color: white;
+}
+section.efacility-resetpassword-container div.container form input {
+  width: 60%;
+  margin: 2.5% 0;
+  border-color: black;
+}
+section.efacility-resetpassword-container div.container form button {
+  background: gray;
+}
+section.efacility-resetpassword-container div.container form button:hover {
+  border-color: black;
+  color: white;
+  background: transparent;
+}
+section.efacility-resetpassword-container div.container form a {
+  color: white;
+}
+
+@media (max-width: 800px) {
+  section.efacility-login-container,
+section.efacility-signup-container {
+    height: 100%;
+  }
+  section.efacility-login-container div.left-column,
+section.efacility-signup-container div.left-column {
+    background: none;
+    height: 80vh;
+  }
+  section.efacility-login-container div.left-column h1,
+section.efacility-signup-container div.left-column h1 {
+    color: skyblue;
+  }
+  section.efacility-login-container div.right-column,
+section.efacility-signup-container div.right-column {
+    padding: 10% 5%;
+    color: white;
+    background-color: skyblue;
+    border: none;
+    overflow: hidden;
+  }
+  section.efacility-login-container form p#warning,
+section.efacility-signup-container form p#warning {
+    color: #ffcc00;
+  }
+  section.efacility-login-container form label.required-field::after,
+section.efacility-signup-container form label.required-field::after {
+    color: #ffcc00;
+  }
+  section.efacility-login-container form input,
+section.efacility-signup-container form input {
+    border: 1px solid black;
+  }
+  section.efacility-login-container form ::placeholder,
+section.efacility-signup-container form ::placeholder {
+    font-size: 0.85em;
+  }
+  section.efacility-login-container form button,
+section.efacility-signup-container form button {
+    background: white;
+    color: skyblue;
+  }
+  section.efacility-login-container form button:hover,
+section.efacility-signup-container form button:hover {
+    background: #990033;
+    color: white;
+  }
+  section.efacility-login-container form a,
+section.efacility-signup-container form a {
+    color: white;
+    opacity: 0.8;
+  }
+  section.efacility-login-container form a:hover,
+section.efacility-signup-container form a:hover {
+    opacity: 1;
+  }
+  section.efacility-login-container form a#temp-dash-link,
+section.efacility-signup-container form a#temp-dash-link {
+    display: block;
+    padding: 0;
+  }
+
+  section.efacility-resetpassword-container {
+    padding-top: 10%;
+  }
+  section.efacility-resetpassword-container div.container {
+    width: 90%;
+    padding: 5%;
+  }
+  section.efacility-resetpassword-container div.container h1 {
+    font-size: 1.8em;
+  }
+  section.efacility-resetpassword-container div.container h2 {
+    font-size: 1em;
+  }
+  section.efacility-resetpassword-container div.container form {
+    width: 100%;
+    padding: 0;
+    padding-top: 10%;
+  }
+  section.efacility-resetpassword-container div.container form input {
+    width: 100%;
+  }
+  section.efacility-resetpassword-container div.container form button {
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+}
+section.efacility-dashboard-container {
+  padding: 0;
+  background: #e8e9eb;
+}
+section.efacility-dashboard-container h2 {
+  all: unset;
+}
+section.efacility-dashboard-container header {
+  all: unset;
+  position: fixed;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  padding: 1% 5%;
+  border-bottom: 2px solid gray;
+  background: black;
+  overflow: hidden;
+}
+section.efacility-dashboard-container header a#logo-anchor img {
+  all: unset;
+  display: block;
+  float: left;
+  width: 4em;
+}
+section.efacility-dashboard-container div.parent-container {
+  padding: 5%;
+}
+section.efacility-dashboard-container div.parent-container h1 {
+  margin-bottom: 5%;
+  color: #011627;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+section.efacility-dashboard-container div.parent-container button {
+  height: 2em;
+  border: 1px solid gold;
+  border-radius: 20px;
+  background: transparent;
+  font-size: 0.92em;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+section.efacility-dashboard-container div.parent-container button:hover {
+  color: white;
+  background: #011627;
+}
+section.efacility-dashboard-container div.parent-container div.flex div.column {
+  display: grid;
+  place-items: center;
+  height: 10em;
+  padding: 2.5% 1.25%;
+  margin: 0 2.5%;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 0 #ccc;
+  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+  text-align: center;
+}
+section.efacility-dashboard-container div.parent-container div.flex div.column i {
+  color: #990033;
+  font-size: 1.5em;
+}
+section.efacility-dashboard-container div.parent-container div.flex div.column h3 {
+  color: #011627;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+section.efacility-dashboard-container div.parent-container div.flex div.column h2 {
+  margin-top: 5%;
+  color: #990033;
+  font-size: 1.3em;
+}
+section.efacility-dashboard-container div.parent-container div.flex div.column:first-of-type {
+  margin-left: 0;
+}
+section.efacility-dashboard-container div.parent-container div.flex div.column:last-of-type {
+  margin-right: 0;
+}
+section.efacility-dashboard-container div#welcome {
+  padding-top: 10em;
+}
+section.efacility-dashboard-container div#welcome h2 {
+  font-size: 1.5em;
+}
+section.efacility-dashboard-container div#welcome h2 span {
+  color: #990033;
+  font-size: 100%;
+  font-weight: 400;
+}
+section.efacility-dashboard-container div#welcome h3 {
+  position: relative;
+  font-size: 1em;
+}
+section.efacility-dashboard-container div#welcome h3 span {
+  color: #011627;
+  font-size: 100%;
+  font-weight: 500;
+  cursor: pointer;
+}
+section.efacility-dashboard-container div#welcome h3 span:hover {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+section.efacility-dashboard-container div#welcome span.tooltip {
+  left: 16%;
+  margin-top: 10px;
+}
+section.efacility-dashboard-container div#welcome h3:hover ~ span.tooltip {
+  opacity: 1;
+  visibility: visible;
+  animation: slide-up 0.4s;
+  animation-duration: 1;
+}
+section.efacility-dashboard-container div#overview {
+  padding-top: 1.25%;
+}
+section.efacility-dashboard-container div#overview div.column {
+  flex: 20%;
+}
+section.efacility-dashboard-container div#actions div.flex div.column {
+  flex: 25%;
+  height: 15em;
+  overflow: hidden;
+}
+section.efacility-dashboard-container div#actions div.flex div.column h3 {
+  margin-top: 5%;
+  font-size: 1.1em;
+}
+section.efacility-dashboard-container div#actions div.flex div.column a {
+  display: inline;
+  width: 30%;
+  margin-top: 5%;
+}
+section.efacility-dashboard-container div#actions div.flex div.column a button {
+  width: 100%;
+}
+section.efacility-dashboard-container div#payment-history {
+  overflow-x: scroll;
+}
+section.efacility-dashboard-container div#payment-history input {
+  width: 20em;
+  height: 2.5em;
+  margin-bottom: 2.5%;
+  padding: 0 1.25%;
+  border: 1px solid #011627;
+  border-radius: 50px;
+  color: #011627;
+  font-weight: 500;
+}
+section.efacility-dashboard-container div#payment-history ::placeholder {
+  color: #011627;
+  font-weight: 100;
+}
+section.efacility-dashboard-container div#payment-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+section.efacility-dashboard-container div#payment-history table tr th {
+  padding: 0.325% 2.5%;
+  border-bottom: 3px solid #990033;
+  border-collapse: collapse;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+section.efacility-dashboard-container div#payment-history table tr td {
+  padding: 2.5% 0;
+  border: 1px solid #011627;
+  border-collapse: collapse;
+  text-align: center;
+}
+section.efacility-dashboard-container div#payment-history table tr td button {
+  width: 6em;
+  font-size: 0.92em;
+}
+section.efacility-dashboard-container div#payment-history table tr td.pending {
+  color: #990033;
+}
+section.efacility-dashboard-container div#payment-history table tr td.paid {
+  color: gray;
+}
+section.efacility-dashboard-container div#payment-history table tr.hidden {
+  display: none;
+}
+section.efacility-dashboard-container div#stats {
+  padding: 0;
+  padding-top: 5%;
+  margin: 5%;
+  border-top: 5px solid gray;
+}
+section.efacility-dashboard-container div#stats div.column {
+  flex: 10%;
+}
+section.efacility-dashboard-container div#stats div.column h3 {
+  margin-top: 5%;
+}
+section.efacility-dashboard-container div#calculator div.flex div.column {
+  display: block;
+  flex: 50%;
+  width: unset;
+  height: unset;
+  margin: unset;
+  border: unset;
+  padding: unset;
+  margin: unset;
+  box-shadow: unset;
+  border-radius: unset;
+  background: none;
+  text-align: left;
+}
+section.efacility-dashboard-container div#calculator div.flex div.column h2 {
+  display: block;
+  margin: 0;
+  margin-bottom: 10%;
+}
+section.efacility-dashboard-container div#calculator div.flex div#o-level {
+  padding-right: 10%;
+  border-right: 3px solid gray;
+}
+section.efacility-dashboard-container div#calculator div.flex div#o-level div.flex {
+  margin: 2.5% 0;
+}
+section.efacility-dashboard-container div#calculator div.flex div#o-level div.flex span {
+  flex: 1%;
+  padding-top: 10px;
+}
+section.efacility-dashboard-container div#calculator div.flex div#o-level div.flex input,
+section.efacility-dashboard-container div#calculator div.flex div#o-level div.flex select {
+  display: block;
+  height: 3em;
+  padding: 0 1.25%;
+  border: 1px solid #011627;
+  border-radius: 10px;
+  background: transparent;
+}
+section.efacility-dashboard-container div#calculator div.flex div#o-level div.flex input {
+  margin: 0 2.5%;
+  flex: 70%;
+}
+section.efacility-dashboard-container div#calculator div.flex div#o-level div.flex select {
+  flex: 20%;
+  width: 5em;
+  padding: 0 5px;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results {
+  padding-left: 10%;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results div#putme {
+  padding-bottom: 20%;
+  border-bottom: 4px solid gray;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results div#putme div#score-container {
+  width: 70%;
+  height: 3em;
+  border: 1px solid #011627;
+  border-radius: 10px;
+  overflow: hidden;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results div#putme div#score-container input {
+  all: unset;
+  display: inline-block;
+  flex: 80%;
+  height: 100%;
+  padding-left: 5%;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results div#putme div#score-container span {
+  display: grid;
+  place-items: center;
+  flex: 10%;
+  height: 100%;
+  color: white;
+  background-color: #011627;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results div#putme span.tooltip {
+  left: 76%;
+  margin-top: 10px;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results div#putme div:hover ~ span.tooltip {
+  opacity: 1;
+  visibility: visible;
+  animation: slide-up 0.4s;
+  animation-duration: 1;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results div#putme input[type=checkbox] {
+  width: 1em;
+  height: 1em;
+  margin-top: 10%;
+}
+section.efacility-dashboard-container div#calculator div.flex div#putme-results div#putme label {
+  cursor: pointer;
+}
+section.efacility-dashboard-container div#calculator div.flex div#results {
+  display: grid;
+  place-items: center;
+  height: 20em;
+}
+section.efacility-dashboard-container div#calculator div.flex div#results h2 {
+  font-size: 6em;
+}
+
+section.support-container {
+  padding: 0;
+}
+section.support-container section.hero {
+  padding: 12em 5%;
+  background: gray;
+  text-align: center;
+}
+section.support-container section.hero h1 {
+  color: white;
+  font-size: 3em;
+  font-weight: 600;
+}
+section.support-container section.hero p {
+  margin-top: 1.25%;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 400;
+}
+section.support-container section.filter-by-topic {
+  text-align: center;
+}
+section.support-container section.filter-by-topic div.container {
+  padding: 5% 10% 0;
+}
+section.support-container section.filter-by-topic div.container a {
+  flex: 25%;
+  margin: 2.5%;
+}
+section.support-container section.filter-by-topic div.container a div {
+  display: grid;
+  place-items: center;
+  height: 5em;
+  color: gray;
+  background: transparent;
+  border: 1px solid gray;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+section.support-container section.filter-by-topic div.container a div:hover {
+  color: white;
+  background: gray;
+  border: 0;
+  border-radius: 10px;
+}
+section.support-container section.faqs {
+  padding-left: 15%;
+  padding-right: 15%;
+  background: #cccc99;
+}
+section.support-container section.faqs input {
+  width: 100%;
+  height: 4em;
+  margin: 5% 0;
+  padding: 0 2.5%;
+  border: 1px solid black;
+  border-radius: 50px;
+  color: #990033;
+  outline: 0;
+}
+section.support-container section.faqs p.edit-filter {
+  display: none;
+  margin: 1.25% 0;
+  color: #011627;
+  font-size: 1.3em;
+  font-weight: 400;
+  cursor: pointer;
+}
+section.support-container section.faqs p.edit-filter a {
+  all: inherit;
+}
+section.support-container section.faqs p.edit-filter:last-of-type {
+  margin-bottom: 5%;
+}
+section.support-container section.faqs p.edit-filter:hover {
+  text-decoration: underline;
+}
+section.support-container section.faqs div {
+  margin: 2.5% 0;
+  font-size: 1.3em;
+}
+section.support-container section.faqs div details summary {
+  margin-bottom: 1.25%;
+  outline: 0;
+  cursor: pointer;
+  font-size: 1.3em;
+}
+section.support-container section.faqs div details summary:hover {
+  text-decoration: underline;
+}
+section.support-container section.faqs div details p {
+  display: inline-block;
+  padding: 1.25% 2.5%;
+  margin-left: 5%;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: white;
+  background: silver;
+  line-height: 2em;
+}
+section.support-container section.faqs div details p a {
+  color: #ffcc00;
+}
+section.support-container section.faqs div details p a:hover {
+  text-decoration: underline;
+}
+section.support-container section.faqs div details[open] summary ~ p {
+  animation: pull-down 0.2s ease-in-out;
+}
+@keyframes pull-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section.support-container section.raise-ticket {
+  text-align: center;
+}
+section.support-container section.raise-ticket h1 {
+  font-size: 2.2em;
+}
+section.support-container section.raise-ticket h2 {
+  all: unset;
+  display: block;
+  margin: 2.5% 0;
+  font-size: 1.8em;
+  color: silver;
+}
+section.support-container section.raise-ticket form {
+  width: 40%;
+  margin: 5% auto;
+}
+section.support-container section.raise-ticket form input,
+section.support-container section.raise-ticket form select,
+section.support-container section.raise-ticket form textarea {
+  display: block;
+  width: 100%;
+  height: 3.5em;
+  margin: 5% 0;
+  padding: 2.5%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: #990033;
+  outline-color: gray;
+}
+section.support-container section.raise-ticket form input[name=name] {
+  text-transform: capitalize;
+}
+section.support-container section.raise-ticket form input[disabled] {
+  background: #ccc;
+}
+section.support-container section.raise-ticket form select {
+  cursor: pointer;
+}
+section.support-container section.raise-ticket form textarea {
+  display: block;
+  height: 10em;
+  resize: none;
+  overflow: scroll;
+}
+section.support-container section.raise-ticket form p {
+  font-size: 0.9em;
+}
+section.support-container section.raise-ticket form button {
+  width: 10em;
+  height: 3.6em;
+  margin: 5% 0;
+  border: 1px solid gray;
+  color: silver;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+section.support-container section.raise-ticket form button:hover {
+  color: white;
+  background: gray;
+  border: 0;
+  border-radius: 5px;
+}
+section.support-container section.office-locations {
+  text-align: center;
+  background: #e8e9eb;
+}
+section.support-container section.office-locations h3 {
+  margin: 1.25% 0;
+  font-size: 1.4em;
+}
+section.support-container section.office-locations input {
+  float: right;
+  width: 30%;
+  height: 3.5em;
+  margin-top: 5%;
+  padding: 0 2.5%;
+  border: 1px solid gray;
+  border-radius: 50px;
+  color: #990033;
+  outline: 0;
+}
+section.support-container section.office-locations div.container {
+  margin: 15% -2.5% 0;
+  text-align: left;
+}
+section.support-container section.office-locations div.container div.location {
+  flex: 20%;
+  margin: 5% 2.5%;
+}
+section.support-container section.office-locations div.container div.location h4 {
+  margin-bottom: 1.25%;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+section.support-container section.office-locations div.container div.location h5 {
+  margin-bottom: 5%;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #011627;
+}
+section.support-container section.office-locations div.container div.location p {
+  margin-bottom: 5%;
+}
+section.support-container section.office-locations div.container div.location a {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #990033;
+}
+section.support-container section.office-locations div.container div.location a:hover {
+  text-decoration: underline;
+}
+section.support-container section.office-locations div.container div.location a#email {
+  margin-top: 5%;
+  color: #011627;
+}
+section.support-container section.office-locations div.container div.location a#google-maps {
+  margin-top: 5%;
+  color: silver;
+}
+
+@media (max-width: 800px) {
+  section.support-container section.hero {
+    padding: 10em 5% 5em;
+    text-align: left;
+  }
+  section.support-container section.hero h1 {
+    font-size: 2.5em;
+  }
+  section.support-container section.hero p {
+    margin: 5% 0;
+  }
+  section.support-container section.filter-by-topic div.container {
+    padding: 0;
+    padding-top: 10%;
+  }
+  section.support-container section.filter-by-topic div.container a div {
+    height: 6em;
+    margin: 2.5% 0;
+  }
+  section.support-container section.faqs {
+    padding: 10% 5%;
+  }
+  section.support-container section.faqs input {
+    height: 3em;
+    padding-left: 5%;
+  }
+  section.support-container section.faqs p.edit-filter {
+    font-size: 1em;
+  }
+  section.support-container section.faqs div {
+    margin: 5% 0;
+  }
+  section.support-container section.faqs div details summary {
+    font-size: 1em;
+  }
+  section.support-container section.raise-ticket h1 {
+    font-size: 1.8em;
+  }
+  section.support-container section.raise-ticket h2 {
+    font-size: 1.4em;
+  }
+  section.support-container section.raise-ticket form {
+    width: 100%;
+    margin-top: 20%;
+  }
+  section.support-container section.office-locations h3 {
+    font-size: 1.2em;
+  }
+  section.support-container section.office-locations input {
+    float: none;
+    width: 100%;
+    padding-left: 5%;
+  }
+  section.support-container section.office-locations div.container div.location {
+    margin-bottom: 5em;
+  }
+}
+section.privacy-policy-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+section.privacy-policy-container h1 {
+  font-size: 4.5em;
+}
+section.privacy-policy-container h1 q {
+  font-size: 100%;
+}
+section.privacy-policy-container h1 q span {
+  color: #990033;
+  font-size: 100%;
+}
+section.privacy-policy-container a {
+  display: block;
+  margin-top: 5%;
+  font-size: 2em;
+  color: gray;
+}
+section.privacy-policy-container a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  section.privacy-policy-container h1 {
+    font-size: 2.5em;
+  }
+  section.privacy-policy-container a {
+    font-size: 1.5em;
+    text-align: left;
+  }
+}
+section.terms-of-use-container {
+  width: 100%;
+  height: 100vh;
+  background: #cccc99;
+}
+section.terms-of-use-container p {
+  margin: 2.5% 0;
+  font-size: 1.8em;
+}
+section.terms-of-use-container p a {
+  color: black;
+  font-size: 100%;
+}
+section.terms-of-use-container a#go-back {
+  display: block;
+  margin-top: 5%;
+  font-size: 1.4em;
+  color: black;
+}
+section.terms-of-use-container a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  section.terms-of-use-container {
+    height: auto;
+  }
+  section.terms-of-use-container p {
+    margin: 10% 0;
+    font-size: 1.5em;
+  }
+}
+section.sitemap-container h1 {
+  color: silver;
+  font-size: 4em;
+}
+section.sitemap-container h1 a {
+  font-size: 100%;
+}
+section.sitemap-container div.flex {
+  margin-top: -5%;
+}
+section.sitemap-container div.flex div.column {
+  flex: 20%;
+  margin: 10% 1.25%;
+}
+section.sitemap-container div.flex div.column h2 a {
+  font-size: inherit;
+  font-weight: inherit;
+}
+section.sitemap-container div.flex div.column ul li {
+  margin: 2.5% 0;
+  padding-left: 2.5%;
+  list-style: square;
+  list-style-position: inside;
+}
+section.sitemap-container div.flex div.column ul li a.auth-required::after {
+  content: "*";
+  color: #990033;
+  font-weight: 800;
+  padding-left: 1.25%;
+}
+
+section.main-404-container {
+  display: flex;
+  height: 100vh;
+  padding: 0;
+}
+section.main-404-container div {
+  flex: 50%;
+  overflow: hidden;
+}
+section.main-404-container div a {
+  color: silver;
+}
+section.main-404-container div.left-column {
+  padding: 10% 5%;
+  display: grid;
+  place-items: center;
+}
+section.main-404-container div.left-column h1 {
+  font-size: 4.5em;
+  font-weight: 600;
+  color: gray;
+}
+section.main-404-container div.left-column p {
+  margin: 5% 0;
+  font-size: 1.3em;
+  text-align: center;
+}
+section.main-404-container div.left-column p a {
+  font-size: 100%;
+}
+section.main-404-container div.left-column p a:hover {
+  text-decoration: underline;
+}
+section.main-404-container div.right-column {
+  height: 100vh;
+  background-color: silver;
+}
+section.main-404-container img {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  section.main-404-container {
+    display: block;
+    height: unset;
+  }
+  section.main-404-container div {
+    height: 100vh;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

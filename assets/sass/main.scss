@@ -1,0 +1,20 @@
+@import "abstracts/variables";
+
+@import "base/base";
+
+@import "components/animation";
+@import "components/components";
+
+@import "layouts/footer";
+@import "layouts/header";
+
+@import "page/index";
+@import "page/efacility-login-signup";
+@import "page/efacility-dashboard";
+@import "page/support";
+
+@import "page/privacy-policy";
+@import "page/terms-of-use";
+@import "page/sitemap";
+
+@import "page/404";

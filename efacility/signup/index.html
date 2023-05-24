@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <meta name="description" content="Signup on JAMB E-facility. Check Admission Status, Change preferred course of study and much more!">
+        <meta name="keywords" content="jamb, jamb website, utme, university, universities, nigeria, direct entry, efacility, caps, efacility login">
+
+        <title>E-Facility Signup | Joint Admissions And Matriculation Board</title>
+        <link rel="shortcut icon" href="../../assets/img/logo.png">
+
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../../assets/sass/main.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <!-- SIDEBAR -->
+            <nav>
+                <div id="main-links">
+                    <a href="index.html">Home</a>
+                    <a id="about-toggler">About</a>
+                    <a id="quick-links-toggler">Quick Links</a>
+                    <a id="news-toggler">News & Events</a>
+                    <a id="stats-toggler">Statistics</a>
+                    <a href="../../archives">Archives</a>
+                    <a href="../../intranet">Intranet</a>
+                    <a href="../../support">Support</a>
+                </div>
+
+                <!-- More Links for About Links -->
+                <div class="more-links about-links">
+                    <a id="about-go-back" class="go-back"><i class="fas fa-long-arrow-alt-left"></i></a>
+                    <a href="../../about/board">Board</a>
+                    <a href="../../about/meet-the-team">Management Team</a>
+                    <a href="../../about/departments">Departments</a>
+                    <a href="../../about/partners">Our Partners</a>
+                    <a href="../../about/third-party">Third Party Services</a>
+                </div>
+
+                <!-- More Links for Quick Links -->
+                <div class="more-links quick-links">
+                    <a id="quick-links-go-back" class="go-back"><i class="fas fa-long-arrow-alt-left"></i></a>
+                    <a href="../../centres">CBT Centres</a>
+                    <a href="../../efacility/login">E-Facility</a>
+                    <a href="../../ibass">IBASS</a>
+                    <a href="../../stock">Stock Management</a>
+                    <a href="../../director-academic-programme">DAP</a>
+                    <a href="../../matric-list">Matriculation List</a>
+                </div>
+
+                <!-- More Links for News Links -->
+                <div class="more-links news-links">
+                    <a id="news-go-back" class="go-back"><i class="fas fa-long-arrow-alt-left"></i></a>
+                    <a href="../../news">News</a>
+                    <a href="../../news/bulletin">Our Bulletin</a>
+                    <a href="../../news/gallery">Events and Gallery</a>
+                    <a href="../../news/tenders">Tenders & Procurement</a>
+                    <a href="../../news/speeches">Speeches & Presentations</a>
+                    <a href="../../news/calendar">Calendar</a>
+                </div>
+
+                <!-- More Links for Statistics -->
+                <div class="more-links stats-links">
+                    <a id="stats-go-back" class="go-back"><i class="fas fa-long-arrow-alt-left"></i></a>
+                    <a href="../../statistics/financial-statement">Financial Statement</a>
+                    <a href="../../statistics/annual-report">Annual Report</a>
+                </div>
+            </nav>
+
+
+            <!-- Show on Desktop -->
+            <a href="../.." title="JAMB"><img src="../../assets/img/Untitled2.png" alt="Logo" class="hide-on-mobile"></a>
+
+            <!-- Show on Mobile -->
+            <a href="../.." title="JAMB"><img src="../../assets/img/logo.png" alt="Logo" class="show-on-mobile"></a>
+
+            <!-- Hamburger Menu Icon -->
+            <span id = "hamburger-menu-container">
+                    <span id="line-1"></span>
+                    <span id="line-2"></span>
+                    <span id="line-3"></span>
+            </span>
+        </header>
+
+        <section class="efacility-signup-container flex">
+            <div class="left-column">
+                <h1>Signup</h1>
+            </div>
+
+            <div class="right-column">
+                <form action="POST">
+                    <label for="f-name" class="required-field">First Name</label>
+                    <input type="text" name="f-name" id="f-name" required placeholder="Bimpe" autocomplete="given-name" title="What is your given name?">
+
+                    <label for="m-name">Middle Name</label>
+                    <input type="text" name="m-name" id="m-name" placeholder="Chioma" autocomplete="additional-name" title="What is your middle name?">
+
+                    <label for="l-name" class="required-field">Last Name</label>
+                    <input type="text" name="l-name" id="l-name" required placeholder="Baba" autocomplete="family-name" title="What is your surname?">
+
+                    <label for="gender" class="required-field">Gender</label>
+                    <select id="gender" name="gender" autocomplete="sex" required title="Select an Option. Male or Female?">
+                        <option selected>- Select -</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+
+                    <label for="dob" class="required-field">Date of Birth</label>
+                    <input type="date" name="dob" id="dob" autocomplete="bday" required title="What is your date of birth?">
+
+                    <label for="phone-num" class="required-field">Telephone Number</label>
+                    <input type="num" name="phone-num" id="phone-num" required autocomplete="tel" placeholder="0816 633 5513" title="What is your phone number?">
+
+                    <label for="address" class="required-field">Home Address</label>
+                    <input type="text" name="address" id="address" required placeholder="11, Ojora Road, Ikoyi" autocomplete="street-address" title="Where do you live?">
+
+                    <label for="state" class="required-field">State</label>
+                    <select name="state" id="state" title="In what state? You can also specify outside Nigeria">
+                        <option value="" selected="selected">- Select -</option>
+                        <option value="Outside Nigeria">*Outside Nigeria</option>
+                        <option value="Abuja FCT">Abuja FCT</option>
+                        <option value="Abia">Abia</option>
+                        <option value="Adamawa">Adamawa</option>
+                        <option value="Akwa Ibom">Akwa Ibom</option>
+                        <option value="Anambra">Anambra</option>
+                        <option value="Bauchi">Bauchi</option>
+                        <option value="Bayelsa">Bayelsa</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Borno">Borno</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Delta">Delta</option>
+                        <option value="Ebonyi">Ebonyi</option>
+                        <option value="Edo">Edo</option>
+                        <option value="Ekiti">Ekiti</option>
+                        <option value="Enugu">Enugu</option>
+                        <option value="Gombe">Gombe</option>
+                        <option value="Imo">Imo</option>
+                        <option value="Jigawa">Jigawa</option>
+                        <option value="Kaduna">Kaduna</option>
+                        <option value="Kano">Kano</option>
+                        <option value="Katsina">Katsina</option>
+                        <option value="Kebbi">Kebbi</option>
+                        <option value="Kogi">Kogi</option>
+                        <option value="Kwara">Kwara</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Nassarawa">Nassarawa</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Ogun">Ogun</option>
+                        <option value="Ondo">Ondo</option>
+                        <option value="Osun">Osun</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Plateau">Plateau</option>
+                        <option value="Rivers">Rivers</option>
+                        <option value="Sokoto">Sokoto</option>
+                        <option value="Taraba">Taraba</option>
+                        <option value="Yobe">Yobe</option>
+                        <option value="Zamfara">Zamfara</option>
+                    </select>
+
+                    <label for="email" class="required-field">Email Address</label>
+                    <input type="email" id="email" required placeholder="bimpe.chioma.baba@gmail.com" autocomplete="email" title="Enter your email address">
+
+                    <label for="password" class="required-field">Password</label>
+                    <input type="password" id="password" minlength="8" required placeholder="Make it 8 characters or more" autocomplete="new-password" title="Create a secure password.">
+
+                    <label for="c-password" class="required-field">Confirm Password</label>
+                    <input type="password" id="c-password" minlength="8" required placeholder="What you typed up there" autocomplete="new-password" title="Verify what you typed up there">
+
+                    <p id="warning"></p>
+                    <!-- Demo: -->
+                    <!-- <p id="warning">E-mail Address / Password is Incorrect</p> -->
+
+
+                    <button type="submit" name="button">Submit</button>
+                    <a href="/index.html" id="temp-dash-link" title="Temporary link to dashboard. Replaces backend signup functionalities.">Go to Home Page</a>
+
+                    <p>Already have an account? <a href="../login">Login</a></p>
+
+                </form>
+            </div>
+        </section>
+
+        <script src="../../assets/scripts/header.js"></script>
+        <script src="../../assets/scripts/efacility-login-signup.js"></script>
+    </body>
+</html>
